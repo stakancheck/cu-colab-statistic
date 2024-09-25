@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# weak01
+# week01
 # Задача 1
 
 name = "Артём"
