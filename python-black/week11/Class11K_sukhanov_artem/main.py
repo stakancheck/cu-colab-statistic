@@ -1,6 +1,7 @@
 import asyncio
 import os
 from collections import defaultdict
+from collections.abc import AsyncIterable
 
 import aiofiles
 from aiocsv import AsyncDictWriter, AsyncDictReader
@@ -12,7 +13,7 @@ class CSVReader:
         self.chunk_size = chunk_size
         self.headers = None
 
-    async def read_in_chunks(self) -> list[dict[str, str]]:
+    async def read_in_chunks(self) -> AsyncIterable[list[dict[str, str]]]:
         async with aiofiles.open(self.file_path, mode='r') as file:
             reader = AsyncDictReader(file)
             self.headers = reader.fieldnames
