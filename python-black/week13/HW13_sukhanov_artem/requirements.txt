@@ -1,0 +1,2 @@
+websockets~=14.1
+aiofiles~=24.1.0
